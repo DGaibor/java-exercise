@@ -3,8 +3,8 @@ public class Book extends LibraryMaterial{
     private String author;
     private int pages;
 
-    public Book(String id, String title,  boolean available, String author, int pages){
-        super(id, title, available);
+    public Book(String id, String title, String author, int pages){
+        super(id, title);
         this.author = author;
         this.pages = pages;
     }
@@ -19,5 +19,11 @@ public class Book extends LibraryMaterial{
     @Override
     public String getType() {
         return "Book";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                String.format(" (autor=%s, páginas=%d)", author, pages);
     }
 }

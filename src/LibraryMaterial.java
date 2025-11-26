@@ -5,10 +5,10 @@ public abstract class LibraryMaterial  implements Provider{
     private boolean available;
 
 
-    public LibraryMaterial(String id, String title, boolean available) {
+    public LibraryMaterial(String id, String title) {
         this.id = id;
         this.title = title;
-        this.available = available;
+        this.available = true;
     }
 
     public String getId() {
@@ -38,5 +38,10 @@ public abstract class LibraryMaterial  implements Provider{
 
     public abstract String getType();
 
+    @Override
+    public String toString() {
+        return String.format("%s [id=%s, titulo=%s, disponible=%s]",
+                getType(), id, title, available ? "Sí" : "No");
+    }
 
 }
